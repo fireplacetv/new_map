@@ -1,4 +1,20 @@
 {
-    "sources": {},
-    "layers": []
+    "sources": {
+    	"sites": {
+    		"type": "geojson",
+    		"data": {
+    			"type": "FeatureCollection",
+    			"features": []
+    		}
+    	}
+    },
+    "layers": [{
+    	"id": "sites-layer",
+    	"type": "circle",
+    	"source": "sites",
+    	"paint": {
+    		"circle-color": "orange"
+    	}
+    }
+    ]
 }
