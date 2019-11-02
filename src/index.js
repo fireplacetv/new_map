@@ -7,8 +7,9 @@ import custom from "./custom-style.json";
 let map;
 
 async function init() {
-    const style = map.getStyle();
+    const neighborhoods = await import("../data/la-county-neighborhoods-v5.json");
     const sites = await import("../data/sites.json");
+    const style = map.getStyle();
 
     style.sources = {
         ...style.sources,
@@ -17,6 +18,7 @@ async function init() {
     style.layers.push(...custom.layers);
     map.setStyle(style);
 
+    map.getSource("neighborhoods").setData(neighborhoods);
     map.getSource("sites").setData(sites);
 }
 
