@@ -1,7 +1,8 @@
 {
     "container": "map",
     "accessToken": "pk.eyJ1IjoiZmlyZXBsYWNldHYiLCJhIjoiY2o2MnM5eWo0MWIybjMydDY1a2p0enJiciJ9.15pcvwTbGHv9Ey5rJMoGeA",
-    "style": "mapbox://styles/fireplacetv/ck2hx73q01mfw1cq63uypn7rb",
+    "satelite-style": "mapbox://styles/fireplacetv/ck2hx73q01mfw1cq63uypn7rb",
+    "style":"mapbox://styles/fireplacetv/ck2hw3jui0wjw1cob39xs962g",
     "zoom": 9.43,
     "center": [-118.078,33.895],
     "pitch": 0,

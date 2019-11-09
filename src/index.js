@@ -21,6 +21,7 @@ async function init() {
 
     map.getSource("output").setData(output);
     initPopup();
+    initLegend();
 }
 
 function initPopup() {
@@ -54,6 +55,24 @@ function clearHover() {
   }
 }
 
+function initLegend() {
+  const legend = document.querySelector("#legend");
+  const template = document.querySelector("#legend-entry");
+  const colors = map.getPaintProperty("output-extrusion", "fill-extrusion-color").stops;
+
+  colors.forEach(function(color, i) {
+    const entry = document.importNode(template.content, true); // get HTML content of the template
+    const spans = entry.querySelectorAll("span");
+    spans[0].style.backgroundColor = color[1];
+    if (colors.length === i+1) {
+      spans[1].textContent = `>= ${color[0]}`
+    } else {
+      spans[1].textContent = `${color[0]} - ${colors[i+1][0]-1}`
+    }
+
+    legend.appendChild(entry);
+  });
+}
 
 mapboxgl.accessToken = settings.accessToken;
 map = new mapboxgl.Map(settings);

@@ -16,7 +16,7 @@ main {
     height: 100%;
 }
 
-#popup, header {
+#popup, header, #legend {
   position: fixed;
   z-index: 10;
   background: white;
@@ -39,4 +39,22 @@ header a {
   display: none;
   top: 10px;
   right: 10px;
+}
+
+#legend {
+  bottom: 30px;
+  right: 10px;
+  z-index: 9;
+}
+
+h4 {
+  margin: 0;
+}
+
+.entry-color {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+  
 }
