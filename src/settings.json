@@ -4,5 +4,7 @@
     "style": "mapbox://styles/fireplacetv/ck2hx73q01mfw1cq63uypn7rb",
     "zoom": 9.43,
     "center": [-118.078,33.895],
-    "pitch": 45
+    "pitch": 0,
+
+    "customAttribution": "<a href=\"http://historicplacesla.org/about_data\">&copy; Historic Places LA</a>, <a href=\"http://boundaries.latimes.com/about/\">&copy; LA Times</a>"
 }

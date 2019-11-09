@@ -1,46 +1,68 @@
 {
     "sources": {
-    	"sites": {
-    		"type": "geojson",
-    		"data": {
-    			"type": "FeatureCollection",
-    			"features": []
-    		}
-    	},
-    	"neighborhoods": {
-    		"type": "geojson",
-    		"data": {
-    			"type": "FeatureCollection",
-    			"features": []
-    		}
-    	}
+      "output": {
+        "type": "geojson",
+        "data": {
+          "type": "FeatureCollection",
+          "features": []
+        }
+      }
     },
     "layers": [
-    	{
-    		"id": "neighborhoods-layer",
-	    	"type": "fill",
-	    	"source": "neighborhoods",
+      {
+        "id": "output-lines",
+        "type": "line",
+        "source": "output",
+        "paint": {
+          "line-color": [
+              "case",
+              ["boolean", ["feature-state","hover"], false],
+              "red", "yellow"
+          ],
+          "line-width": [
+              "case",
+              ["boolean", ["feature-state","hover"], false],
+              5, 2
+          ]
+        }
+      }, {
+        "id": "output-floor",
+        "type": "fill",
+        "source": "output",
+        "paint": {
+          "fill-color": "red",
+          "fill-opacity": [
+              "case",
+              ["boolean", ["feature-state","hover"], false],
+              0.5,0
+          ]
+        }
+      }, {
+        "id": "output-extrusion",
+        "type": "fill-extrusion",
+	    	"source": "output",
 	    	"paint": {
-	    		"fill-color": "rgba(255,255,0,0.50)",
-	    		"fill-outline-color": "rgba(255,255,0,0.50)"
-				}
-	    },
-    	{
-    		"id": "neighborhoods-outline",
-	    	"type": "line",
-	    	"source": "neighborhoods",
-	    	"paint": {
-	    		"line-color": "yellow",
-	    		"line-width": 3
-				}
-	    },
-    	{
-	    	"id": "sites-layer",
-	    	"type": "circle",
-	    	"source": "sites",
-	    	"paint": {
-	    		"circle-color": "orange"
-	    	}
-	    }
+          "fill-extrusion-height": [
+            "case",
+            ["boolean", ["feature-state", "hover"], false],
+            ["+", ["*", ["get","count"],5],1000], ["*", ["get","count"],5]
+          ],
+          "fill-extrusion-base": [
+            "case",
+            ["boolean", ["feature-state", "hover"], false],
+            1000, 0
+          ],
+          "fill-extrusion-color": {
+            "property": "count",
+            "stops": [
+                [0, "#ffffb2"],
+                [100,"#fecc5c"],
+                [300,"#fd8d3c"],
+                [600,"#f03b20"],
+                [1200,"#bd0026"]
+              ]},
+            "fill-extrusion-opacity": 0.5
+            }
+      }
     ]
 }

@@ -15,3 +15,28 @@ main {
 #map {
     height: 100%;
 }
+
+#popup, header {
+  position: fixed;
+  z-index: 10;
+  background: white;
+  margin: 0 0 0 0;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+
+header {
+    top: 10px;
+    left: 10px;
+}
+
+header a {
+  color: black;
+}
+
+#popup {
+  display: none;
+  top: 10px;
+  right: 10px;
+}
