@@ -45,13 +45,7 @@
           "fill-extrusion-height": [
             "case",
             ["boolean", ["feature-state", "hover"], false],
-            ["+", ["*", ["get","count"],5],1000], ["*", ["get","count"],5]
-          ],
-          "fill-extrusion-base": [
-            "case",
-            ["boolean", ["feature-state", "hover"], false],
-            1000, 0
-          ],
+            ["*", ["get","count"],5], 0],
           "fill-extrusion-color": {
             "property": "count",
             "stops": [
@@ -61,7 +55,7 @@
                 [600,"#f03b20"],
                 [1200,"#bd0026"]
               ]},
-            "fill-extrusion-opacity": 0.5
+            "fill-extrusion-opacity": 1
             }
       }
     ]

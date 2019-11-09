@@ -28,7 +28,7 @@ function initPopup() {
     const nameEl = popup.querySelector(".name");
     const countEl = popup.querySelector(".count");
 
-    map.on("mousemove","output-floor",function(e) {
+    map.on("mousemove","output-extrusion",function(e) {
       clearHover();
 
       if (e.features.length > 0) {
@@ -42,7 +42,7 @@ function initPopup() {
       }
     });
 
-    map.on("mouseleave", "output-floor", clearHover);
+    map.on("mouseleave", "output-extrusion", clearHover);
 }
 
 function clearHover() {
